@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="pos_promotion_form_view_total_price_buy_other_product" model="ir.ui.view">
+        <field name="name">pos_promotion_form_view_total_price_buy_other_product</field>
+        <field name="model">pos.promotion</field>
+        <field name="inherit_id" ref="ev_pos_promotion.pos_promotion_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='promotion_detail']" position="inside">
+                <group name="buy_other_product" string="Condition"
+                       attrs="{'invisible': [('type', '!=', 'total_price_buy_other_product')]}">
+                    <field name="pos_promotion_total_price_buy_other_product_ids">
+                        <tree editable="bottom">
+                            <field name="product_id"/>
+                            <field name="qty"/>
+                            <field name="price_unit"/>
+                            <field name="promotion_id" invisible="1"/>
+                            <field name="discount"/>
+                            <field name="total_price"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

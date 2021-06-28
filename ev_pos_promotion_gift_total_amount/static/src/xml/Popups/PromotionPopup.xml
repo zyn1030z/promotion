@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <t t-name="CouponProductsPopup" owl="1">
+       <div role="dialog" class="modal-dialog">
+           <div class="popup popup-couponproducts" style="background-color: #7bcedb">
+               <p class="title">
+                   <t t-esc="props.title" />
+               </p>
+               <span class="body">
+                   <!-- Display coupon category products in popup -->
+                      <ProductList products="productsToDisplay" />
+                   <!-- Adding text field-->
+                   <input type="text" />
+                     <!-- Adding date field-->
+                   <input type="date" />
+                     <!-- Adding selection field-->
+                   <select name="cars" id="cars">
+                       <option value="volvo">Volvo</option>
+                       <option value="saab">Range Rover</option>
+                       <option value="mercedes">Mercedes</option>
+                       <option value="audi">Audi</option>
+                   </select>
+               </span>
+               <div class="footer">
+                   <div class="button cancel" t-on-click="confirm">
+                       <t t-esc="props.confirmText" />
+                   </div>
+               </div>
+           </div>
+       </div>
+   </t>
+</templates>
